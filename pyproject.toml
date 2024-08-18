@@ -30,3 +30,5 @@ distribution = true
 
 [tool.pdm.version]
 source = "scm"
+write_to = "watcloud_utils/_version.py"
+write_template = "__version__ = '{}'"
