@@ -11,9 +11,9 @@ classifiers = [
 ]
 requires-python = ">=3.10"
 dependencies = [
-    "prometheus-fastapi-instrumentator>=7.0.0,<8",
-    "sentry-sdk[fastapi]>=2.13.0,<3",
-    "typer>=0.12.4,<1",
+    "prometheus-fastapi-instrumentator>=7.0.0",
+    "sentry-sdk[fastapi]>=2.13.0",
+    "typer>=0.12.4",
 ]
 
 dynamic = ["version"]
@@ -21,6 +21,10 @@ dynamic = ["version"]
 [project.urls]
 Homepage = "https://github.com/watonomous/watcloud-utils"
 
+[project.optional-dependencies]
+testing = [
+    "pytest>=8.3.2",
+]
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
