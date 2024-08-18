@@ -11,3 +11,15 @@ def set_up_logging():
     handler = logging.StreamHandler()
     handler.setFormatter(formatter)
     logger.addHandler(handler)
+
+    # set the logging level for some common noisy loggers
+    logging.getLogger("azure.core.pipeline.policies.http_logging_policy").setLevel(logging.WARNING)
+    logging.getLogger("urllib3.connectionpool").setLevel(logging.INFO)
+    
+    # add nicer formatting to uvicorn logs
+    uvicorn_logger = logging.getLogger("uvicorn")
+    if uvicorn_logger.handlers:
+        uvicorn_logger.handlers[0].setFormatter(formatter)
+    uvicorn_access_logger = logging.getLogger("uvicorn.access")
+    if uvicorn_access_logger.handlers:
+        uvicorn_access_logger.handlers[0].setFormatter(formatter)
