@@ -173,4 +173,4 @@ pyrightconfig.json
 # https://github.com/pdm-project/pdm/blob/8ad143c11509ae1a1e0cf8b4e58f2bb9e6bdc30a/.gitignore#L140-L141
 .pdm-build/
 src/pdm/models/VERSION
-# src/watcloud_utils/_version.py
+src/watcloud_utils/_version.py
