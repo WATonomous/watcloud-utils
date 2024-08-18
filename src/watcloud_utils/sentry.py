@@ -43,7 +43,7 @@ def set_up_sentry(
     image_rev = build_labels.get("org.opencontainers.image.revision", "unknown_rev")
 
     SENTRY_RELEASE = (
-        getvar("SENTRY_RELEASE", logger=logger)
+        getvar(Var.SENTRY_RELEASE, logger=logger)
         or f"{image_title}:{image_version}@{image_rev}"
     )
 
