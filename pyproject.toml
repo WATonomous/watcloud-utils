@@ -1,0 +1,32 @@
+[project]
+name = "watcloud-utils"
+description = "Utility package for WATcloud"
+readme = "README.md"
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "prometheus-fastapi-instrumentator>=7.0.0,<8",
+    "sentry-sdk[fastapi]>=2.13.0,<3",
+    "typer>=0.12.4,<1",
+]
+
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/watonomous/watcloud-utils"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.version]
+source = "scm"
